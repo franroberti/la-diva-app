@@ -10,6 +10,13 @@ class Done extends Component {
 
     }
 
+    componentWillMount(){
+        console.log("DONE MOUNT");
+    }
+
+    componentWillUnMount(){
+        console.log("DONE UNMOUNT");
+    }
 
     render() {
         return  <section style={{width: "80%",margin:"auto"}}>

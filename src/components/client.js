@@ -5,6 +5,7 @@ import Tabs from "./tabs/tabs";
 import {fetchAll} from "../actions/allActions";
 import {connect} from "react-redux";
 import {Loader} from "./loader/loader";
+import {Switch, Route, BrowserRouter} from 'react-router-dom'
 
 const mapStateToProps = (store)  => {
     return {
@@ -31,10 +32,19 @@ class Client extends Component {
             return <Loader />
         }
 
-        return  <section>
-                    <Search />
-                    <Tabs />
-                </section>
+        return (
+            <BrowserRouter>
+                <Switch >
+                    <Route exact path='/' component={Search} />
+                    <Route path='/address' component={Tabs} />
+                </Switch>
+            </BrowserRouter>
+        )
+
+        //return  <section>
+        //            <Search />
+        //            <Tabs />
+        //        </section>
 
     }
 }
