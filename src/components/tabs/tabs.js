@@ -1,33 +1,36 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import UserProfile from "./userProfile";
+import CarModel from "./carModel";
 import {strings} from "../../localization/strings";
-import Done from "./done";
-import ToDo from "./toDo";
+import CarType from "./carType";
+import CarWashType from "./carWashType";
+import BalanceHistory from "./balanceHistory";
 
 
 class TabsContainer extends React.Component {
 
+
     render() {
         return (
             <Tabs>
-                <Tab label={strings.toDoTabHeader}>
+                <Tab label={strings.washTypeHeader} >
                     <div>
-                        <ToDo />
+                        <CarWashType data={this.props.data} />
                     </div>
                 </Tab>
-                <Tab
-                    label={strings.doneTabHeader}
-                    //data-route="/home"
-                    //onActive={handleActive}
-                >
+                <Tab label={strings.carTypeHeader}>
                     <div>
-                        <Done />
+                        <CarType data={this.props.data}/>
                     </div>
                 </Tab>
-                <Tab label={strings.userProfileTabHeader}>
+                <Tab label={strings.carModelHeader}>
                     <div>
-                        <UserProfile />
+                        <CarModel data={this.props.data}/>
+                    </div>
+                </Tab>
+                <Tab label={strings.balanceHistoryHeader}>
+                    <div>
+                        <BalanceHistory data={this.props.data}/>
                     </div>
                 </Tab>
             </Tabs>

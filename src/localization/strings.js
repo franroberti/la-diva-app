@@ -1,9 +1,9 @@
 export const strings = {
-    plateInputPlaceholder: "Patente",
-    plate:"patente",
-    userProfileTabHeader: "Usuario",
-    doneTabHeader: "Hechos",
-    toDoTabHeader: "A realizar",
+    washTypeHeader: "Lavado",
+    carTypeHeader: "Auto",
+    carModelHeader: "Marca",
+    balanceHistoryHeader: "Balance",
+
 
     //WORKSHEET NAMES
     wsToDo: "A realizar",

@@ -1,7 +1,5 @@
 export default function reducer(state={
-    cars: [],
-    done: [],
-    toDo: [],
+    carsWashed: [],
     all_fetching: false,
     all_fetched: false,
     all_fetch_error: null,
@@ -10,9 +8,7 @@ export default function reducer(state={
         case "FETCH_ALL": {
             return {
                 ...state,
-                cars: [],
-                done: [],
-                toDo: [],
+                carsWashed: [],
                 all_fetching:true,
                 all_fetched:false,
                 all_fetch_error:null
@@ -21,9 +17,7 @@ export default function reducer(state={
         case "FETCH_ALL_FULFILLED": {
             return {
                 ...state,
-                cars: action.payload[2],
-                done: action.payload[1],
-                toDo: action.payload[0],
+                carsWashed: action.payload,
                 all_fetching:false,
                 all_fetched:true,
                 all_fetch_error:null
@@ -32,6 +26,7 @@ export default function reducer(state={
         case "FETCH_ALL_ERROR": {
             return {
                 ...state,
+               // carsWashed:[],
                 all_fetching:false,
                 all_fetched:false,
                 all_fetch_error:action.error

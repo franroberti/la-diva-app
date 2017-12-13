@@ -17,9 +17,6 @@ class Client extends Component {
 
     constructor(props){
         super(props);
-
-        this.state = {plate: ''};
-
     }
 
     componentWillMount(){
@@ -32,19 +29,19 @@ class Client extends Component {
             return <Loader />
         }
 
-        return (
-            <BrowserRouter>
-                <Switch >
-                    <Route exact path='/' component={Search} />
-                    <Route path='/address' component={Tabs} />
-                </Switch>
-            </BrowserRouter>
-        )
+        // return (
+        //     <BrowserRouter>
+        //         <Switch >
+        //             <Route exact path='/' component={Search} />
+        //             <Route path='/address' component={Tabs} />
+        //         </Switch>
+        //     </BrowserRouter>
+        // )
 
-        //return  <section>
-        //            <Search />
-        //            <Tabs />
-        //        </section>
+        return  <section>
+                   <Search />
+                   <Tabs data={this.props.store.carsWashed} />
+               </section>
 
     }
 }
